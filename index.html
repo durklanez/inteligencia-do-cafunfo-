@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Inteligência do Cafunfo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #e5e7eb;
+      text-align: center;
+      padding: 40px;
+    }
+    h1 { color: #38bdf8; }
+    button {
+      padding: 12px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 6px;
+      background: #38bdf8;
+      color: #000;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover { background: #0ea5e9; }
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Inteligência do Cafunfo</h1>
+  <p>Plataforma digital para criar apps, bots e projetos tecnológicos</p>
+
+  <button onclick="pingServer()">Testar Backend Python</button>
+
+  <div id="result"></div>
+
+  <script>
+    async function pingServer() {
+      const res = await fetch('/api/ping');
+      const data = await res.json();
+      document.getElementById('result').innerText = data.message;
+    }
+  </script>
+
+</body>
+</html>
