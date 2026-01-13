@@ -1,1 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Inteligência do Cafunfo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0f172a;
+      color: #e5e7eb;
+      display: flex;
+    }
+
+    /* MENU LATERAL */
+    .sidebar {
+      width: 230px;
+      height: 100vh;
+      background-color: #020617;
+      padding-top: 20px;
+      position: fixed;
+      left: 0;
+      top: 0;
+    }
+
+    .sidebar h2 {
+      text-align: center;
+      color: #38bdf8;
+      margin-bottom: 30px;
+    }
+
+    .sidebar button {
+      width: 100%;
+      padding: 15px;
+      background: none;
+      border: none;
+      color: #e5e7eb;
+      font-size: 16px;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .sidebar button:hover {
+      background-color: #1e293b;
+    }
+
+    /* CONTEÚDO */
+    .main {
+      margin-left: 230px;
+      padding: 30px;
+      width: 100%;
+    }
+
+    .card {
+      background-color: #020617;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+  </style>
+
+  <script>
+    function mudarConteudo(texto) {
+      document.getElementById("conteudo").innerHTML = texto;
+    }
+  </script>
+</head>
+
+<body>
+
+  <div class="sidebar">
+    <h2>Cafunfo</h2>
+    <button onclick="mudarConteudo('🏠 Bem-vindo à Inteligência do Cafunfo')">Início</button>
+    <button onclick="mudarConteudo('🤖 Área de Bots e Automação')">Bots</button>
+    <button onclick="mudarConteudo('📱 Criação de Aplicativos')">Apps</button>
+    <button onclick="mudarConteudo('🎓 Cursos e Formação Digital')">Cursos</button>
+    <button onclick="mudarConteudo('⚙️ Preferências do Sistema')">Preferências</button>
+  </div>
+
+  <div class="main">
+    <h1>Inteligência do Cafunfo</h1>
+
+    <div id="conteudo" class="card">
+      🚀 Plataforma digital para criar apps, bots e projetos tecnológicos no Cafunfo.
+    </div>
+  </div>
+
+</body>
+</html>
