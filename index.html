@@ -9,83 +9,133 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #0f172a;
+      background: #0f172a;
       color: #e5e7eb;
       display: flex;
     }
 
     /* MENU LATERAL */
     .sidebar {
-      width: 230px;
+      width: 240px;
+      background: #020617;
       height: 100vh;
-      background-color: #020617;
-      padding-top: 20px;
-      position: fixed;
-      left: 0;
-      top: 0;
+      padding: 20px;
+      box-sizing: border-box;
     }
 
     .sidebar h2 {
-      text-align: center;
       color: #38bdf8;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
 
-    .sidebar button {
+    .btn {
       width: 100%;
-      padding: 15px;
-      background: none;
-      border: none;
+      padding: 12px;
+      margin-bottom: 10px;
+      background: #111827;
       color: #e5e7eb;
-      font-size: 16px;
+      border: none;
       text-align: left;
       cursor: pointer;
+      border-radius: 6px;
+      font-size: 15px;
     }
 
-    .sidebar button:hover {
-      background-color: #1e293b;
+    .btn:hover {
+      background: #1e293b;
     }
 
     /* CONTEÚDO */
-    .main {
-      margin-left: 230px;
+    .content {
+      flex: 1;
       padding: 30px;
-      width: 100%;
+    }
+
+    .section {
+      display: none;
+      background: #020617;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .section h3 {
+      color: #38bdf8;
+    }
+
+    .active {
+      display: block;
     }
 
     .card {
-      background-color: #020617;
-      padding: 20px;
-      border-radius: 10px;
-      margin-top: 20px;
+      background: #111827;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 10px;
     }
   </style>
-
-  <script>
-    function mudarConteudo(texto) {
-      document.getElementById("conteudo").innerHTML = texto;
-    }
-  </script>
 </head>
 
 <body>
 
+  <!-- MENU -->
   <div class="sidebar">
-    <h2>Cafunfo</h2>
-    <button onclick="mudarConteudo('🏠 Bem-vindo à Inteligência do Cafunfo')">Início</button>
-    <button onclick="mudarConteudo('🤖 Área de Bots e Automação')">Bots</button>
-    <button onclick="mudarConteudo('📱 Criação de Aplicativos')">Apps</button>
-    <button onclick="mudarConteudo('🎓 Cursos e Formação Digital')">Cursos</button>
-    <button onclick="mudarConteudo('⚙️ Preferências do Sistema')">Preferências</button>
+    <h2>⚡ Cafunfo</h2>
+
+    <button class="btn" onclick="openTab('python')">🐍 Python</button>
+    <button class="btn" onclick="openTab('js')">🟨 JavaScript</button>
+    <button class="btn" onclick="openTab('flutter')">📱 Flutter</button>
+    <button class="btn" onclick="openTab('bots')">🤖 Bots</button>
+    <button class="btn" onclick="openTab('webhook')">🔗 Webhooks</button>
   </div>
 
-  <div class="main">
-    <h1>Inteligência do Cafunfo</h1>
+  <!-- CONTEÚDO -->
+  <div class="content">
 
-    <div id="conteudo" class="card">
-      🚀 Plataforma digital para criar apps, bots e projetos tecnológicos no Cafunfo.
+    <div id="python" class="section active">
+      <h3>🐍 Python</h3>
+      <div class="card">Criar APIs com Flask</div>
+      <div class="card">Automação</div>
+      <div class="card">Backend de aplicativos</div>
     </div>
+
+    <div id="js" class="section">
+      <h3>🟨 JavaScript</h3>
+      <div class="card">Sites interativos</div>
+      <div class="card">Frontend de apps</div>
+      <div class="card">Integração com APIs</div>
+    </div>
+
+    <div id="flutter" class="section">
+      <h3>📱 Flutter</h3>
+      <div class="card">Apps Android</div>
+      <div class="card">Apps iOS</div>
+      <div class="card">UI moderna</div>
+    </div>
+
+    <div id="bots" class="section">
+      <h3>🤖 Bots</h3>
+      <div class="card">Bots Telegram</div>
+      <div class="card">Bots WhatsApp</div>
+      <div class="card">Bots automáticos</div>
+    </div>
+
+    <div id="webhook" class="section">
+      <h3>🔗 Webhooks</h3>
+      <div class="card">Integração com APIs</div>
+      <div class="card">Pagamentos</div>
+      <div class="card">Eventos automáticos</div>
+    </div>
+
   </div>
+
+  <script>
+    function openTab(tabId) {
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(section => section.classList.remove('active'));
+
+      document.getElementById(tabId).classList.add('active');
+    }
+  </script>
 
 </body>
 </html>
