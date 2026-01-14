@@ -1,202 +1,25 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-<meta charset="UTF-8">
-<title>Inteligência do Cafunfo</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #020617;
-  color: #e5e7eb;
-}
-
-/* TELA INICIAL */
-#home {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-#home h1 {
-  font-size: 64px;
-  color: #22d3ee;
-  margin-bottom: 10px;
-}
-
-#home p {
-  max-width: 600px;
-  font-size: 18px;
-  color: #cbd5f5;
-  margin-bottom: 30px;
-}
-
-#enterBtn {
-  padding: 15px 40px;
-  font-size: 18px;
-  background: #22d3ee;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  color: #020617;
-}
-
-#enterBtn:hover {
-  background: #38bdf8;
-}
-
-/* PLATAFORMA */
-#platform {
-  display: none;
-  height: 100vh;
-  display: flex;
-}
-
-/* MENU */
-.sidebar {
-  width: 240px;
-  background: #020617;
-  border-right: 1px solid #1e293b;
-  padding: 20px;
-}
-
-.sidebar h2 {
-  color: #22d3ee;
-  margin-bottom: 20px;
-}
-
-.lang-btn {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 10px;
-  background: #111827;
-  border: 1px solid #1e293b;
-  color: #e5e7eb;
-  cursor: pointer;
-  border-radius: 6px;
-  text-align: left;
-}
-
-.lang-btn:hover {
-  background: #1e293b;
-}
-
-/* ÁREA DE CÓDIGO */
-.content {
-  flex: 1;
-  padding: 20px;
-}
-
-.panel {
-  display: none;
-  height: 100%;
-}
-
-.panel.active {
-  display: block;
-}
-
-.code-box {
-  background: #000;
-  color: #22c55e;
-  padding: 15px;
-  border-radius: 8px;
-  height: 80%;
-  overflow-y: auto;
-  font-family: monospace;
-}
-
-.error {
-  color: #ef4444;
-}
-
-</style>
+  <meta charset="UTF-8">
+  <title>Inteligência do Cafunfo</title>
+  <link rel="stylesheet" href="/static/style.css">
 </head>
-
 <body>
 
-<!-- TELA INICIAL -->
-<div id="home">
-  <h1>CAFUNFO</h1>
+<div class="hero">
+  <h1>
+    Inteligência do 
+    <span class="cafunfo">Cafunfo</span>
+  </h1>
+
   <p>
-    Cafunfo é uma oportunidade de inteligência digital.
-    Uma plataforma criada para desenvolver aplicações,
-    bots, sistemas e soluções tecnológicas para o futuro.
+    Plataforma digital para criar apps, bots e projetos tecnológicos.
+    Oportunidade real para desenvolvedores.
   </p>
-  <button id="enterBtn" onclick="enterPlatform()">ENTRAR</button>
+
+  <a href="/linguagens" class="btn">ENTRAR</a>
 </div>
-
-<!-- PLATAFORMA -->
-<div id="platform">
-
-  <!-- MENU -->
-  <div class="sidebar">
-    <h2>Linguagens</h2>
-    <button class="lang-btn" onclick="openPanel('python')">🐍 Python</button>
-    <button class="lang-btn" onclick="openPanel('js')">🟨 JavaScript</button>
-    <button class="lang-btn" onclick="openPanel('flutter')">📱 Flutter</button>
-    <button class="lang-btn" onclick="openPanel('bots')">🤖 Bots</button>
-  </div>
-
-  <!-- CONTEÚDO -->
-  <div class="content">
-
-    <div id="python" class="panel active">
-      <h3>🐍 Python – Espaço de Código</h3>
-      <div class="code-box">
-        > Aqui vai hospedar código Python<br>
-        > APIs Flask<br>
-        > Backend<br>
-        <span class="error">[ERRO] módulo não encontrado</span>
-      </div>
-    </div>
-
-    <div id="js" class="panel">
-      <h3>🟨 JavaScript – Espaço de Código</h3>
-      <div class="code-box">
-        > Frontend<br>
-        > Eventos<br>
-        > Interface dinâmica
-      </div>
-    </div>
-
-    <div id="flutter" class="panel">
-      <h3>📱 Flutter – Espaço de Código</h3>
-      <div class="code-box">
-        > Apps Android / iOS<br>
-        > Widgets<br>
-        > UI moderna
-      </div>
-    </div>
-
-    <div id="bots" class="panel">
-      <h3>🤖 Bots – Espaço de Código</h3>
-      <div class="code-box">
-        > Bots Telegram<br>
-        > Automação<br>
-        > Webhooks
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<script>
-function enterPlatform() {
-  document.getElementById("home").style.display = "none";
-  document.getElementById("platform").style.display = "flex";
-}
-
-function openPanel(id) {
-  document.querySelectorAll(".panel").forEach(p => p.classList.remove("active"));
-  document.getElementById(id).classList.add("active");
-}
-</script>
 
 </body>
 </html>
