@@ -1,25 +1,59 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8">
-  <title>Inteligência do Cafunfo</title>
-  <link rel="stylesheet" href="/static/style.css">
+<meta charset="UTF-8">
+<title>Linguagens - Cafunfo</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: #e5e7eb;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 40px;
+}
+
+.card {
+  background: #1e293b;
+  padding: 30px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: white;
+  font-size: 22px;
+}
+
+.card:hover {
+  background: #22c55e;
+  color: black;
+}
+
+.back {
+  display: inline-block;
+  margin-top: 30px;
+  color: #38bdf8;
+  text-decoration: none;
+}
+</style>
 </head>
+
 <body>
 
-<div class="hero">
-  <h1>
-    Inteligência do 
-    <span class="cafunfo">Cafunfo</span>
-  </h1>
+<h1>Linguagens</h1>
 
-  <p>
-    Plataforma digital para criar apps, bots e projetos tecnológicos.
-    Oportunidade real para desenvolvedores.
-  </p>
-
-  <a href="/linguagens" class="btn">ENTRAR</a>
+<div class="grid">
+  <a href="/python" class="card">🐍 Python</a>
+  <a href="/javascript" class="card">🟨 JavaScript</a>
+  <a href="/flutter" class="card">📱 Flutter</a>
+  <a href="/bots" class="card">🤖 Bots</a>
 </div>
+
+<a href="/" class="back">⬅ Voltar</a>
 
 </body>
 </html>
