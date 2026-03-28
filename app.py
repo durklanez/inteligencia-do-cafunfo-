@@ -6,12 +6,12 @@ app.secret_key = "cafunfo"
 # Banco simples (memória)
 users = {}
 
-# ------------------ PÁGINA PRINCIPAL ------------------
+# ------------------ HOME ------------------
 @app.route('/')
 def home():
     return render_template('index.html')
 
-# ------------------ LINGUAGENS ------------------
+# ------------------ PÁGINAS ------------------
 @app.route('/linguagens')
 def linguagens():
     return render_template('linguagens.html')
@@ -47,7 +47,7 @@ def login():
 
     return render_template('login.html')
 
-# ------------------ REGISTRO ------------------
+# ------------------ REGISTER ------------------
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
@@ -65,6 +65,6 @@ def logout():
     session.pop('user', None)
     return redirect('/')
 
-# ------------------ RODAR APP ------------------
+# ------------------ RODAR ------------------
 if __name__ == '__main__':
     app.run(debug=True)
