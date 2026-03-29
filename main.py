@@ -1,14 +1,5 @@
-from flask import Flask, render_template
-
-app = Flask(__name__)
-
-@app.route("/")
-def index():
-    return render_template("index.html")
-
-@app.route("/linguagens")
-def linguagens():
-    return render_template("linguagens.html")
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=10000)
+<form method="POST" action="/register">
+    <input type="text" name="username" placeholder="Username">
+    <input type="password" name="password" placeholder="Password">
+    <button type="submit">Register</button>
+</form>
